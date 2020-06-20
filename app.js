@@ -15,7 +15,7 @@ const favoriteRouter = require('./routes/favoriteRouter');
 
 const mongoose = require('mongoose');
 
-const url = config.mongoUrl;
+const url = process.env.MONGODB_URI || config.mongoUrl;
 const connect = mongoose.connect(url, {
   useCreateIndex: true,
   useFindAndModify: false,
